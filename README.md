@@ -42,3 +42,20 @@ Example:
 Example:
 
 `const title = <h1 id="title">Title</title>`
+
+**Nested JSX**
+
+- You can nest JSX elements inside of other JSX elements. This works just like in HTML.
+- If the JSX expression takes more then 1 line you must wrap it with a parenthesis ().
+- JSX must have exactly one outermost element. Meaning first opening tag and last must belong to the same JSX element.
+
+**Rendering JSX**
+
+Rendering JSX is done usung the following line of code:
+
+`ReactDOM.render(<h1>Hello world</h1>, document.getElementById('app))`
+
+- ReactDOM - is a name of JavaScript library.
+- ReactDOM.render() - render() is a method from the ReactDOM which renders the JSX to the screen.
+- ReactDOM.render() - takes in 2 arguments:
+  - 1st the elements you liek to display
