@@ -58,4 +58,6 @@ Rendering JSX is done usung the following line of code:
 - ReactDOM - is a name of JavaScript library.
 - ReactDOM.render() - render() is a method from the ReactDOM which renders the JSX to the screen.
 - ReactDOM.render() - takes in 2 arguments:
-  - 1st the elements you liek to display
+  - 1st the elements you like to display
+  - 2nd where you want the elements to display
+- ReactDOM.render() only updates the DOM elements that have changed. If you render the same exact content twice it will only load once.
