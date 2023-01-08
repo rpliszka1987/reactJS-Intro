@@ -155,3 +155,17 @@ const peopleLis = people.map((person, i) =>
 ReactDOM.render(<ul>{peopleLis}</ul>, document.getElementById('app'));
 
 ```
+
+**Start React App**
+
+To start a react app type
+
+```
+  $ npx create-react-app name-of-app
+```
+
+Start the server
+
+```
+$ npm start
+```
