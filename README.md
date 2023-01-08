@@ -61,3 +61,97 @@ Rendering JSX is done usung the following line of code:
   - 1st the elements you like to display
   - 2nd where you want the elements to display
 - ReactDOM.render() only updates the DOM elements that have changed. If you render the same exact content twice it will only load once.
+
+**JSX rules**
+
+- In react you must use className instead of class. Reason is that in JavaScript class is a reserved word for JavaScript class.
+- In react you must close self-closing tags. This is optional in HTML but in React it is a must.
+- In react to run JavaScript code we put it in between curly brackets {}. This way JSX knows to run it as JavaScript.
+- In react you need to place the semicolons ( ; ) at the end of each expression.
+- There are different event listeners which start with onClick or others.
+
+**JSX Conditionals**
+
+- Used to display certain components depending on the condition it met.
+- You can write conditional statement separate without injecting them into the JSX.
+
+Example code:
+
+```
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function coinToss() {
+// This function will randomly return either 'heads' or 'tails'.
+return Math.random() < 0.5 ? 'heads' : 'tails';
+}
+
+const pics = {
+kitty: 'https://content.codecademy.com/courses/React/react_photo-kitty.jpg',
+doggy: 'https://content.codecademy.com/courses/React/react_photo-puppy.jpeg'
+};
+let img;
+
+// if/else statement begins here:
+if (coinToss() === 'heads') {
+img = (
+<img src={pics.kitty} />
+)
+} else {
+img = (
+<img src={pics.doggy} />
+)
+};
+
+ReactDOM.render(img, document.getElementById('app'));
+
+```
+
+**.map() JSX**
+
+- Used to display contents from an array to display.
+
+Example code:
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const people = ['Rowe', 'Prevost', 'Gare'];
+
+const peopleLis = people.map(person =>
+  // expression goes here:
+  <li>{person}</li>
+
+);
+
+// ReactDOM.render goes here:
+ReactDOM.render(<ul>{peopleLis}</ul>, document.getElementById('app'));
+
+```
+
+**JSX keys**
+
+- keys are similar to id attribute.
+- They are not visible and are used to keep track of lists.
+- Keys are used in the React lists.
+
+Example code:
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const people = ['Rowe', 'Prevost', 'Gare'];
+
+const peopleLis = people.map((person, i) =>
+  // expression goes here:
+  <li key={'person_' + i}>{person}</li>
+
+);
+
+// ReactDOM.render goes here:
+ReactDOM.render(<ul>{peopleLis}</ul>, document.getElementById('app'));
+
+```
